@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 
 import colors from '../../../styles/colors'
 
-export const Container = styled(Link)`
+export interface ContainerProps {
+  completeSidebar: boolean;
+}
+
+export const Container = styled(Link)<ContainerProps>`
   position: relative;
-  left: 200px;
+  left: ${props => props.completeSidebar ? '0px' : '200px'};
+
   display: flex;
   align-items: center;
-
 
   width: 100%;
   padding: 12px 0px;

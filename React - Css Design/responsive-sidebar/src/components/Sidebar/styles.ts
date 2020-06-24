@@ -1,28 +1,45 @@
 import styled from 'styled-components';
-import { FaBars } from "react-icons/fa";
 
 import colors from '../../styles/colors'
+
+export interface ContainerProps {
+  completeSidebar: boolean;
+}
+
+export const BarsIcon = styled.div`
+  z-index: 4;
+
+  position: fixed;
+  top: 9px;
+  left: 9px;
+
+  > svg {
+    font-size: 2rem;
+    font-size: 32px;
+    color: #fff;
+  }
+
+  cursor: pointer;
+`;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 250px;
 
+  width: 250px;
   margin-top: 50px;
 
-  background: #aaaa;
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
     display: none;
   }
 
-
 `;
 
-export const Wrapper = styled.div`
+export const Container = styled.div<ContainerProps>`
   position: fixed;
-  left: -200px;
+  left: ${props => props.completeSidebar ? '0' : '-200px'};
 
   display: flex;
   flex-direction: column;
@@ -38,24 +55,9 @@ export const Wrapper = styled.div`
   }
 `
 
-export const BarsIcon = styled(FaBars)`
-  z-index: 4;
+export const Wrapper = styled.div`
+  /* ${BarsIcon}:hover + ${Container} {
+    left: 0;
+  } */
 
-  position: fixed;
-  top: 9px;
-  left: 9px;
-
-  font-size: 2rem;
-  font-size: 32px;
-  color: #fff;
-
-  cursor: pointer;
-
-  &:hover {
-    ${Wrapper}:hover  {
-      left: 400px;
-    }
-  }
-
-
-`;
+`

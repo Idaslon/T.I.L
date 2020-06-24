@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Name } from './styles';
+import { Container, ContainerProps, Name } from './styles';
 
 interface OwnProps {
   name: string;
@@ -8,11 +8,12 @@ interface OwnProps {
   icon: any;
 }
 
-type ItemProps = OwnProps
+type ItemProps = OwnProps & ContainerProps;
 
-const Item: React.FC<ItemProps> = ({ name, icon: Icon, to }) => {
+const Item: React.FC<ItemProps> = ({ name, icon: Icon, to, completeSidebar }) => {
+
   return (
-    <Container to={to}>
+    <Container to={to} completeSidebar={completeSidebar}>
       <Icon></Icon>
       <Name>{name}</Name>
     </Container>
