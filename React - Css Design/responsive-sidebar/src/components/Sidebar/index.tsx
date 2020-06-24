@@ -13,6 +13,23 @@ const Sidebar: React.FC = () => {
       <Content>
         <Item name='Home' icon={FaHome} to='/home' />
         <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
+        <Item name='Rocket' icon={FaRocket} to='/rocket' />
       </Content>
     </Wrapper>
   )

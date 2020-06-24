@@ -9,8 +9,10 @@ export const Content = styled.div`
   left: -200px;
 
   width: 250px;
-  min-height: 100vh;
+  height: 100%;
   background: ${colors.secondary};
+
+  overflow-y: scroll;
 
   transition: all .3s ease-in;
 

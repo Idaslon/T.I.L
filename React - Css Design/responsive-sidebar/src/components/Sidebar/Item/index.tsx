@@ -13,8 +13,8 @@ type ItemProps = OwnProps
 const Item: React.FC<ItemProps> = ({ name, icon: Icon, to }) => {
   return (
     <Container to={to}>
-      <Name>{name}</Name>
       <Icon></Icon>
+      <Name>{name}</Name>
     </Container>
   )
 }

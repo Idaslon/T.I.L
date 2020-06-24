@@ -24,13 +24,11 @@ export const Container = styled(Link)`
   }
 
   > svg {
-    position: fixed;
-    left: 9px;
-
+    margin-left: 9px;
     margin-right: 20px;
 
-    font-size: 1.75rem;
     font-size: 28px;
+    font-size: 1.75rem;
     color: #fff;
 
     @media (max-width: 768px) {
@@ -42,9 +40,7 @@ export const Container = styled(Link)`
 `;
 
 export const Name = styled.span`
-  margin-left: 50px;
-
-  font-size: 1.5rem;
   font-size: 24px;
+  font-size: 1.5rem;
   color: #fff;
 `;
