@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { FaHome, FaRocket, FaBars } from "react-icons/fa";
 
-import {useClickOutsideListenerRef} from '../../hooks/window'
+import { useClickOutsideListenerRef, useWindowSize } from '../../hooks/window'
 
 import Item from './Item';
 import { Wrapper, Container, BarsIcon, Content  } from './styles';
@@ -27,10 +27,11 @@ const Sidebar: React.FC = () => {
   }, []);
 
   const barsRef = useClickOutsideListenerRef(handleOutsideBarsClick);
+  const [width] = useWindowSize();
 
-  const completeSidebar = useMemo(() => {
-    return barsHover || barsClicked;
-  }, [barsClicked, barsHover])
+  const sidebarOpen = useMemo(() => {
+    return barsHover || barsClicked || width >= 768;
+  }, [barsClicked, barsHover, width])
 
   return (
     <Wrapper>
@@ -43,27 +44,27 @@ const Sidebar: React.FC = () => {
         <FaBars />
       </BarsIcon>
 
-      <Container completeSidebar={completeSidebar}>
+      <Container sidebarOpen={sidebarOpen}>
         <Content>
-          <Item name='Home' completeSidebar={completeSidebar} icon={FaHome} to='/home' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' completeSidebar={completeSidebar} icon={FaRocket} to='/rocket' />
+          <Item name='Home' sidebarOpen={sidebarOpen} icon={FaHome} to='/home' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
         </Content>
       </Container>
     </Wrapper>

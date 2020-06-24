@@ -1,15 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import colors from '../../../styles/colors'
 
 export interface ContainerProps {
-  completeSidebar: boolean;
+  sidebarOpen: boolean;
 }
+
+const OpenSidebarStilization = css`
+  left: 0;
+
+  &:hover{
+    background: ${colors.terteary}
+  }
+`;
 
 export const Container = styled(Link)<ContainerProps>`
   position: relative;
-  left: ${props => props.completeSidebar ? '0px' : '200px'};
+  left: 200px;
 
   display: flex;
   align-items: center;
@@ -21,13 +29,7 @@ export const Container = styled(Link)<ContainerProps>`
   transition: margin .4s;
   transition: left .3s ease;
 
-  @media (min-width: 768px) {
-    left: 0;
-
-    &:hover{
-      background: ${colors.terteary}
-    }
-  }
+  ${(props) => props.sidebarOpen && OpenSidebarStilization}
 
   > svg {
     margin-left: 9px;
@@ -37,11 +39,11 @@ export const Container = styled(Link)<ContainerProps>`
     font-size: 1.75rem;
     color: #fff;
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       &:hover {
         color: #7159c1;
       }
-    }
+    } */
   }
 `;
 
