@@ -10,10 +10,10 @@ interface OwnProps {
 
 type ItemProps = OwnProps & ContainerProps;
 
-const Item: React.FC<ItemProps> = ({ name, icon: Icon, to, sidebarOpen }) => {
+const Item: React.FC<ItemProps> = ({ name, icon: Icon, to, open }) => {
 
   return (
-    <Container to={to} sidebarOpen={sidebarOpen}>
+    <Container to={to} open={open}>
       <Icon></Icon>
       <Name>{name}</Name>
     </Container>

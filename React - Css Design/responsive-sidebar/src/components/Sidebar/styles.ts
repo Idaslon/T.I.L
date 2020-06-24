@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import colors from '../../styles/colors'
 
 export interface ContainerProps {
-  sidebarOpen: boolean;
+  open: boolean;
 }
 
 export const BarsIcon = styled.div`
@@ -39,7 +39,7 @@ export const Content = styled.div`
 
 export const Container = styled.div<ContainerProps>`
   position: fixed;
-  left: ${props => props.sidebarOpen ? '0' : '-200px'};
+  left: ${props => props.open ? '0' : '-200px'};
 
   display: flex;
   flex-direction: column;

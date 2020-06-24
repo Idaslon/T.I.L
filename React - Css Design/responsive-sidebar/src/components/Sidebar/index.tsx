@@ -1,70 +1,47 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { FaHome, FaRocket, FaBars } from "react-icons/fa";
 
-import { useClickOutsideListenerRef, useWindowSize } from '../../hooks/window'
+import {useWindowSize } from '../../hooks/window'
+import { useElementFocus } from '../../hooks/element'
 
 import Item from './Item';
 import { Wrapper, Container, BarsIcon, Content  } from './styles';
 
 const Sidebar: React.FC = () => {
-  const [barsHover, setBarsHover] = useState(false);
-  const [barsClicked, setBarsClicked] = useState(false);
-
-  const handleBarsClick = useCallback(() => {
-    setBarsClicked(true);
-  }, []);
-
-  const handleOutsideBarsClick = useCallback(() => {
-    setBarsClicked(false);
-  }, []);
-
-  const handleMouseBarsEnter = useCallback(() => {
-    setBarsHover(true);
-  }, []);
-
-  const handleMouseBarsLeave = useCallback(() => {
-    setBarsHover(false);
-  }, []);
-
-  const barsRef = useClickOutsideListenerRef(handleOutsideBarsClick);
+  const [barsRef, barsFocused] = useElementFocus<HTMLDivElement>();
   const [width] = useWindowSize();
 
-  const sidebarOpen = useMemo(() => {
-    return barsHover || barsClicked || width >= 768;
-  }, [barsClicked, barsHover, width])
+  const open = useMemo(() => {
+    return barsFocused || width >= 768;
+  }, [barsFocused, width])
 
   return (
     <Wrapper>
-      <BarsIcon
-        ref={barsRef}
-        onMouseEnter={handleMouseBarsEnter}
-        onMouseLeave={handleMouseBarsLeave}
-        onClick={handleBarsClick}
-      >
+      <BarsIcon ref={barsRef} >
         <FaBars />
       </BarsIcon>
 
-      <Container sidebarOpen={sidebarOpen}>
+      <Container open={open}>
         <Content>
-          <Item name='Home' sidebarOpen={sidebarOpen} icon={FaHome} to='/home' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
-          <Item name='Rocket' sidebarOpen={sidebarOpen} icon={FaRocket} to='/rocket' />
+          <Item name='Home' open={open} icon={FaHome} to='/home' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
+          <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />
         </Content>
       </Container>
     </Wrapper>

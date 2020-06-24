@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback, useState, useLayoutEffect } from "react";
 
-export function useClickOutsideListenerRef<T=any>(onOutsideClick: () => void) {
+export function useClickOutsideListenerRef<T=HTMLDivElement>(onOutsideClick: () => void) {
   const ref = useRef<T>(null);
 
   const handleClickOutside = useCallback((e: MouseEvent) => {

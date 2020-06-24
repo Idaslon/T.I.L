@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import colors from '../../../styles/colors'
 
 export interface ContainerProps {
-  sidebarOpen: boolean;
+  open: boolean;
 }
 
 const OpenSidebarStilization = css`
@@ -29,7 +29,7 @@ export const Container = styled(Link)<ContainerProps>`
   transition: margin .4s;
   transition: left .3s ease;
 
-  ${(props) => props.sidebarOpen && OpenSidebarStilization}
+  ${(props) => props.open && OpenSidebarStilization}
 
   > svg {
     margin-left: 9px;

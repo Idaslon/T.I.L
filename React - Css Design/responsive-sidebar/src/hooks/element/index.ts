@@ -1,38 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import { useClickOutsideListenerRef } from '../window';
 
-export function useElementFocus() {
+export function useElementFocus<T=any>() {
   const [elementHover, setElementHover] = useState(false);
   const [elementClicked, setElementClicked] = useState(false);
 
-  const elementRef = useClickOutsideListenerRef<HTMLElement>(() => {});
+  const elementRef = useClickOutsideListenerRef<HTMLDivElement>(() => setElementClicked(false));
 
   useEffect(() => {
     if(elementRef.current) {
       console.log('Entrou');
 
+      elementRef.current.onclick = () => setElementClicked(true);
+      elementRef.current.onmouseenter = () => setElementHover(true);
+      elementRef.current.onmouseleave = () => setElementHover(false);
     }
   }, [elementRef])
 
+  const elementFocused = useMemo(() => elementHover || elementClicked, [elementClicked, elementHover])
 
-  return [elementRef, elementHover || elementClicked];
+  return [elementRef, elementFocused] as unknown as [React.RefObject<T>, boolean];
 }
-
-
-
-// const handleBarsClick = useCallback(() => {
-//   setBarsClicked(true);
-// }, []);
-
-// const handleOutsideBarsClick = useCallback(() => {
-//   setBarsClicked(false);
-// }, []);
-
-// const handleMouseBarsEnter = useCallback(() => {
-//   setBarsHover(true);
-// }, []);
-
-// const handleMouseBarsLeave = useCallback(() => {
-//   setBarsHover(false);
-// }, []);
