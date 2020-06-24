@@ -26,8 +26,7 @@ export const Container = styled(Link)<ContainerProps>`
   padding: 12px 0px;
 
   cursor: pointer;
-  transition: margin .4s;
-  transition: left .3s ease;
+  transition: all .3s ease;
 
   ${(props) => props.open && OpenSidebarStilization}
 
@@ -39,11 +38,9 @@ export const Container = styled(Link)<ContainerProps>`
     font-size: 1.75rem;
     color: #fff;
 
-    /* @media (max-width: 768px) {
-      &:hover {
-        color: #7159c1;
-      }
-    } */
+    &:hover {
+      color: ${props => !props.open && '#7159c1'};
+    }
   }
 `;
 

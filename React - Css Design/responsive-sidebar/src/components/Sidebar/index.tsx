@@ -17,11 +17,11 @@ const Sidebar: React.FC = () => {
 
   return (
     <Wrapper>
-      <BarsIcon ref={barsRef} >
-        <FaBars />
-      </BarsIcon>
-
       <Container open={open}>
+        <BarsIcon ref={barsRef} >
+          <FaBars />
+        </BarsIcon>
+
         <Content>
           <Item name='Home' open={open} icon={FaHome} to='/home' />
           <Item name='Rocket' open={open} icon={FaRocket} to='/rocket' />

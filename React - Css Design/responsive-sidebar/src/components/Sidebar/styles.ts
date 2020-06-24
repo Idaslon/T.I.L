@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import colors from '../../styles/colors'
 
@@ -34,12 +34,15 @@ export const Content = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+`;
 
+const OpenSidebarStilization = css`
+  left: 0;
 `;
 
 export const Container = styled.div<ContainerProps>`
   position: fixed;
-  left: ${props => props.open ? '0' : '-200px'};
+  left: -200px;
 
   display: flex;
   flex-direction: column;
@@ -50,14 +53,7 @@ export const Container = styled.div<ContainerProps>`
   background: ${colors.secondary};
   transition: all .3s ease;
 
-  @media (min-width: 768px) {
-    left: 0;
-  }
+  ${(props) => props.open && OpenSidebarStilization}
 `
 
-export const Wrapper = styled.div`
-  /* ${BarsIcon}:hover + ${Container} {
-    left: 0;
-  } */
-
-`
+export const Wrapper = styled.div``
