@@ -4,20 +4,22 @@ import { Link } from 'react-router-dom';
 import colors from '../../../styles/colors'
 
 export const Container = styled(Link)`
+  position: relative;
+  left: 200px;
   display: flex;
   align-items: center;
+
 
   width: 100%;
   padding: 12px 0px;
 
   cursor: pointer;
   transition: margin .4s;
-
-  &:first-child {
-    margin-top: 50px;
-  }
+  transition: left .3s ease;
 
   @media (min-width: 768px) {
+    left: 0;
+
     &:hover{
       background: ${colors.terteary}
     }

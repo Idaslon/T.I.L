@@ -4,22 +4,39 @@ import { FaBars } from "react-icons/fa";
 import colors from '../../styles/colors'
 
 export const Content = styled.div`
-  position: fixed;
-  top: 0;
-  left: -200px;
-
+  display: flex;
+  flex-direction: column;
   width: 250px;
-  height: 100%;
-  background: ${colors.secondary};
 
+  margin-top: 50px;
+
+  background: #aaaa;
   overflow-y: scroll;
 
-  transition: all .3s ease-in;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
+`;
+
+export const Wrapper = styled.div`
+  position: fixed;
+  left: -200px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  max-height: 100vh;
+
+  background: ${colors.secondary};
+  transition: all .3s ease;
 
   @media (min-width: 768px) {
     left: 0;
   }
-`;
+`
 
 export const BarsIcon = styled(FaBars)`
   z-index: 4;
@@ -33,15 +50,12 @@ export const BarsIcon = styled(FaBars)`
   color: #fff;
 
   cursor: pointer;
-`;
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  width: 250px;
-
-  ${BarsIcon}:hover + ${Content} {
-    left: 0;
+  &:hover {
+    ${Wrapper}:hover  {
+      left: 400px;
+    }
   }
-`
+
+
+`;
