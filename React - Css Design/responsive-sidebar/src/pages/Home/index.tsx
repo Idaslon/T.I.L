@@ -5,7 +5,7 @@ import { Container, Title } from './styles';
 const Main: React.FC = () => {
   return (
     <Container>
-      <Title>Main</Title>
+      <Title>Home</Title>
     </Container>
   )
 }
