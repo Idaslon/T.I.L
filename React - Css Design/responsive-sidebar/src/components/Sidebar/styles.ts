@@ -6,6 +6,8 @@ export interface ContainerProps {
   open: boolean;
 }
 
+export const Wrapper = styled.div``
+
 export const BarsIcon = styled.div`
   z-index: 4;
 
@@ -20,20 +22,6 @@ export const BarsIcon = styled.div`
   }
 
   cursor: pointer;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  width: 250px;
-  margin-top: 50px;
-
-  overflow-y: scroll;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const OpenSidebarStilization = css`
@@ -56,4 +44,16 @@ export const Container = styled.div<ContainerProps>`
   ${(props) => props.open && OpenSidebarStilization}
 `
 
-export const Wrapper = styled.div``
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  margin-top: 50px;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;

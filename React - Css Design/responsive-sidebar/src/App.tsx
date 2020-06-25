@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar'
-
 import GlobalStyles from './styles/global'
-
 import Routes from './routes';
+
+import DefaultLayout from './pages/_layout/Default'
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,9 @@ const App: React.FC = () => {
       <GlobalStyles />
       <Sidebar />
 
-      <Routes />
+      <DefaultLayout>
+        <Routes />
+      </DefaultLayout>
     </BrowserRouter>
   );
 }
