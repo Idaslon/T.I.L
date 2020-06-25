@@ -28,7 +28,7 @@ export const Container = styled(Link)<ContainerProps>`
   cursor: pointer;
   transition: all .3s ease;
 
-  ${(props) => props.open && OpenSidebarStilization}
+  ${(props) => props.open && OpenSidebarStilization};
 
   > svg {
     margin-left: 9px;

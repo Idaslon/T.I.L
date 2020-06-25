@@ -6,29 +6,6 @@ const Main: React.FC = () => {
   return (
     <Container>
       <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
-      <Title>Home</Title>
     </Container>
   )
 }
