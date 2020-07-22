@@ -1,0 +1,8 @@
+# Prisma Migrate lockfile v1
+
+20200610103043-create-users
+20200610104238-create-files
+20200709161220-removed-name-on-file
+20200715022528-changed-file-to-video
+20200715023650-create-progress
+20200715024153-add-velue-on-progress
