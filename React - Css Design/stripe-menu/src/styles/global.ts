@@ -7,23 +7,25 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    background: #f5f5f5;
-    font-size: 16px;
-    color: #333;
+  html {
+    min-height: 100%;
+    background: #202020;
   }
 
   *, button, input {
-    background: none;
     border: 0;
     outline: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    font-family: 'Roboto', -apple-system, system-ui, sans-serif;
   }
 
   button {
-    font-family: Arial, Helvetica, sans-serif;
-
     cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
   }
 
 `;
