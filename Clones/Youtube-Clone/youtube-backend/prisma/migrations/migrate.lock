@@ -1,0 +1,5 @@
+# Prisma Migrate lockfile v1
+
+20200730011357-create-user
+20200730011420-create-video
+20200730011449-create-user-video-progress
